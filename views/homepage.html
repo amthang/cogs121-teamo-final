@@ -1,0 +1,80 @@
+<header>
+    <a class="logout" href="/logout">
+        <div class="log-button">
+            Log out
+        </div>
+    </a>
+
+	<div class="welcome col-md-offset-1 col-md-10">
+		<h2 class="username">Hello, {{user}}</h2>
+	</div>
+</header>
+
+<section>
+	<div class="row">
+		<div class="welcome col-md-offset-1 col-md-10">
+			<span>How are you feeling?</span>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-offset-2 col-md-2">
+			<a href="/chatAnxious">
+				<div class="thumbnail tile tile-amethyst tile-medium">
+					<h2 class="homepage-tile">Anxious</h2>
+				</div>
+			</a>
+		</div>
+		<div class="col-md-2">
+			<a href="/chatDepressed">
+				<div class="thumbnail tile tile-midnight-blue tile-medium">
+					<h2 class="homepage-tile">Depressed</h2>
+				</div>
+			</a>
+		</div>
+		<div class="col-md-2">
+			<a href="/chatStressed">
+				<div class="thumbnail tile tile-yellow tile-medium">
+					<h2 class="homepage-tile">Stressed</h2>
+				</div>
+			</a>
+		</div>
+
+		<div class="col-md-2">
+			<a href="/chatLonely">
+				<div class="thumbnail tile tile-carrot tile-medium">
+					<h2 class="homepage-tile">Lonely</h2>
+				</div>
+			</a>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="welcome col-md-offset-1 col-md-10">
+			<span>Make a meetup</span>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-offset-2 col-md-3">
+			<a href="/chatMeetup">
+				<div class="thumbnail tile tile-asbestos tile-wide">
+					<h2 class="homepage-tile">Looking for Support</h2>
+				</div>
+			</a>
+		</div>
+		<div class="col-md-offset-2 col-md-3">
+			<a href="/chatSupport">
+				<div class="thumbnail tile tile-alizarin tile-wide">
+				<h2 class="homepage-tile">I am here for Support! 
+				</h2>				
+				</div>
+			</a>
+		</div>
+	</div>
+</section>
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/socket.io.min.js"></script>
+<script src="./js/chatbox.js"></script>
+<script src="./js/search.js"></script>
