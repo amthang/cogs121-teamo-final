@@ -1,8 +1,8 @@
 (function($) {
-	"use strict";
+    "use strict";
 
-	var socket = io();
-	$('form#send_anxious_message').submit(function(event) {
+    var socket = io();
+    $('form#send_anxious_message').submit(function(event) {
         if(!validateForm()) {
             return false;
         }
@@ -12,7 +12,7 @@
         userInput.val('');                       //clear user input
         return false;
     });
-  
+
     socket.on("anxiety", function(data) {
         var parsedData = JSON.parse(data);
 
@@ -38,7 +38,7 @@
     function validateForm() {
         var a=document.forms["Form"]["field1"].value;
         if (a=="" ) {
-          // alert("Please tell us your feeling");
+            // alert("Please tell us your feeling");
             sweetAlert("Please tell us about your feelings.");
             return false;
         } else if(a.length > 1000) {

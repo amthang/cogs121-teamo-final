@@ -1,7 +1,7 @@
 //dependencies for each module used
 var express = require('express');
 var app = express();
-var http = require('http');
+var http = require('http').createServer(app);
 var io = require("socket.io")(http);
 var path = require('path');
 var handlebars = require('express-handlebars');
@@ -32,6 +32,7 @@ var router = {
     chatSupport: require('./routes/chatSupport'),
     landing: require('./routes/landing'),
     home: require('./routes/home'),
+    dashboard: require('./routes/dashboard')
 };
 
 var parser = {
@@ -137,6 +138,11 @@ passport.deserializeUser(function(user, done) {
 app.get('/', function(req, res) {
     res.render('index');
 });
+
+app.get('/dashboard', router.dashboard.view);
+    // function(req, res) {
+    // res.render('dashboard');
+// });
 
 app.get('/map_explore', function(req, res) {
     res.render('map_view_google');
@@ -331,6 +337,8 @@ io.on('connection', function(socket) {
             return;
         }
 
+        console.log("HERE!!!!!!!");
+
         var newAnxietyPost = new models.Newsfeed({
             'type': 'anxiety',
             'user': user.username,
@@ -486,6 +494,6 @@ io.on('connection', function(socket) {
 
 
 
-http.createServer(app).listen(app.get('port'), function() {
+http.listen(app.get('port'), function() {
     console.log('Express server listening on port ' + app.get('port'));
 });
