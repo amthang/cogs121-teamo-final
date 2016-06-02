@@ -269,7 +269,7 @@ app.get('/map_anxiety_rate', router.queryDELPH.map_anxiety_rate);
 
 
 
-app.get("/", router.landing.view);
+app.get("/chatLanding", router.landing.view);
 app.get("/chat", router.chat.view);
 app.get("/homepage", router.home.view);
 app.get("/chatAnxious", router.chatAnxious.view);
